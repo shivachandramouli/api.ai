@@ -12,7 +12,7 @@ extension Droplet {
             
             if let bytes = req.body.bytes {
                 let json = try JSON(bytes: bytes)
-                self.log.info("\(json)")
+                self.log.info("\(String(describing: json["result"]!["metadata"]!["intentName"]))")
             }
             var json = JSON()
             try json.set("speech", "world")
