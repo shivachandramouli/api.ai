@@ -10,7 +10,10 @@ extension Droplet {
 
         post("helloWorld") { req in
             
-            print("Hello World")
+            if let bytes = req.body.bytes {
+                let json = try JSON(bytes: bytes)
+                self.log.info("\(json)")
+            }
             var json = JSON()
             try json.set("speech", "world")
             try json.set("displayText", "Hey there, this is the display text")
