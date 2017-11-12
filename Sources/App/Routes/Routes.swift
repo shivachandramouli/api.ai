@@ -12,7 +12,8 @@ extension Droplet {
             
             print("Hello World")
             var json = JSON()
-            try json.set("Hello", "world")
+            try json.set("speech", "world")
+            try json.set("displayText", "Hey there, this is the display text")
             return json
         }
         get("plaintext") { req in
