@@ -8,7 +8,7 @@ extension Droplet {
             return json
         }
 
-        post("hello") { req in
+        post("helloWorld") { req in
             
             var json = JSON()
             try json.set("Hello", "world")
