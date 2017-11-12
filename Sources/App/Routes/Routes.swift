@@ -10,6 +10,7 @@ extension Droplet {
 
         post("helloWorld") { req in
             
+            print("Hello World")
             var json = JSON()
             try json.set("Hello", "world")
             return json
