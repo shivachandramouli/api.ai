@@ -17,8 +17,13 @@ extension Droplet {
             var json = JSON()
             try json.set("speech", "world")
             try json.set("displayText", "Hey there, this is the display text")
+            return try Node(node: [
+                "speech": "world",
+                "displayText": "Hey there, this is the display text"
+                ]) as! ResponseRepresentable
             return json
         }
+        
         get("plaintext") { req in
             return "Hello, world!"
         }
